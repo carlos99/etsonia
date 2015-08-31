@@ -86,4 +86,6 @@ Rails.application.configure do
   }
 }
 
+config.action_mailer.default_url_options = { host: 'https://etsonia-store.herokuapp.com/'}
+
 end

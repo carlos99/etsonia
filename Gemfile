@@ -31,6 +31,8 @@ gem 'will_paginate', '~> 3.0.7'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'paperclip', '~> 4.2.1'
 gem 'aws-sdk', '~> 1.59.1'
+gem 'devise', '~> 3.4.1'
+gem 'angularjs-rails', '~> 1.4.4'
 
 
 gem 'rails_12factor', group: :production
