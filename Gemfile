@@ -25,12 +25,12 @@ end
 #New Gems
 
 gem 'puma'
-gem 'rails_12factor'
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'pry', '~> 0.10.1'
 gem 'will_paginate', '~> 3.0.7'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'paperclip', '~> 4.2.1'
+gem 'aws-sdk', '~> 1.59.1'
 
 
 gem 'rails_12factor', group: :production
