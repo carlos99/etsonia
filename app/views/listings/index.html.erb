@@ -11,7 +11,8 @@
         <div class="caption">
           <h3><%= listing.name %></h3>
           <p> <%= number_to_currency(listing.price) %></p>
-          <%= listing.description %>
+          <p><%= listing.description %></p>
+          <p><%= listing.user.name%></p>
           <%= link_to 'Show', listing %>
           <%= link_to 'Edit', edit_listing_path(listing) %>
           <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
