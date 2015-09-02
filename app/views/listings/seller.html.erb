@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row">
+<!-- <p id="notice"><%= notice %></p> -->
+
+<h1>Seller LandingPage</h1>
+  <% @listings.each do |listing| %>
+    <div class="col-md-3">
+
+      <div class="thumbnail">
+      <%= link_to image_tag(listing.image.url), listing %>
+        <div class="caption">
+          <h3><%= listing.name %></h3>
+          <p> <%= number_to_currency(listing.price) %></p>
+          <p><%= listing.description %></p>
+          <p><%= listing.user.name%></p>
+
+          <% if (user_signed_in?) && (current_user ==listing.user) %>
+          <%= link_to 'Edit', edit_listing_path(listing) %>
+          <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+
+
+<br>
+
+<% if user_signed_in? %>
+  <%= link_to 'New Listing', new_listing_path, class: 'btn btn-link' %>
+<% end %>
+
+</div>

@@ -1,9 +1,14 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   #This will prevent that a user type directly the url and get access to the pages.
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:seller, :new, :create, :edit, :update, :destroy]
   #This will prevent that a user can change anything that doesn't belongs to the current user
   before_filter :check_user, only: [:edit, :update, :destroy]
+
+  #The only listings that a user (seller) will see are those that belongs to the current user (owner)
+  def seller
+    @listings = Listing.where(user: current_user).order("created_at DESC")
+  end
 
   # GET /listings
   # GET /listings.json
