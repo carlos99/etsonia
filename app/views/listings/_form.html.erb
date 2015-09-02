@@ -3,7 +3,7 @@
     <div class="col-md-8 col-md-offset-2">
       <%= form_for(@listing, html: { multipart: true }) do |f| %>
         <% if @listing.errors.any? %>
-          <div id="error_explanation" class="alert alert-danger alert-dismissable">
+          <div id="error_explanation" class="alert alert-danger alert-dismissable custom-message-effect">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
 
