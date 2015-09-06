@@ -1,0 +1,40 @@
+<div class="container">
+<h1>Sales History</h1>
+  <div class="row">
+  <div class="col-md-2 col-sm-6 col-xs-12">
+    <h4>Image</h4>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <h4>Item</h4>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <h4>Price</h4>
+  </div>
+  <div class="col-md-2 col-sm-6 col-xs-12">
+    <h4>Customer</h4>
+  </div>
+  <div class="col-md-2 col-sm-6 col-xs-12">
+    <h4>Date Sold</h4>
+  </div>
+</div>
+
+<% @orders.each do |order| %>
+<div class="row">
+  <div class="col-md-2 col-sm-6 col-xs-12">
+    <%= image_tag order.listing.image.url(:thumb), class: "img-responsive" %>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <h3><%= order.listing.name %></h3>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <p> <%= number_to_currency(order.listing.price) %></p>
+  </div>
+  <div class="col-md-2 col-sm-6 col-xs-12">
+    <p><%= order.buyer.name %></p>
+  </div>
+  <div class="col-md-2 col-sm-6 col-xs-12">
+   <p><%= order.created_at.strftime("%B %-d, %Y")%></p>
+  </div>
+</div>
+<% end %>
+</div>
