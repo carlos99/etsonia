@@ -1,14 +1,9 @@
 <div class="container">
 	<div class="row">
 	<div class="col-md-6">
-		<p>
-			<strong>Image</strong>
-			<%= image_tag @listing.image.url, class: 'img-responsive' %>
-		</p>
-
-		
+		<%= image_tag @listing.image.url, class: 'img-responsive' %>	
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-6 description-item-container">
 		<p>
 		  <strong>Name:</strong>
 		  <%= @listing.name %>
