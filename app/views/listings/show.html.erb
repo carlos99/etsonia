@@ -1,27 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="row">
+	<div class="col-md-6">
+		<p>
+			<strong>Image</strong>
+			<%= image_tag @listing.image.url, class: 'img-responsive' %>
+		</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @listing.name %>
-</p>
+		
+	</div>
+	<div class="col-md-6">
+		<p>
+		  <strong>Name:</strong>
+		  <%= @listing.name %>
+		</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
+		<p>
+		  <strong>Price:</strong>
+		  <%= @listing.price %>
+		</p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
+		<p>
+		  <strong>Description:</strong>
+		  <%= @listing.description %>
+		</p>
+		<p>
+			<%= link_to "Buy Now", new_listing_order_path(@listing), class: 'btn btn-primary'%>
+		</p>
 
-<p>
-	<strong>Image</strong>
-	<%= image_tag @listing.image.url(:medium) %>
-</p>
+		 <% if current_user == @listing.user %>
+		  <%= link_to 'Edit', edit_listing_path(@listing) %> |
+		 <% end %>
 
- <% if current_user == @listing.user %>
-  <%= link_to 'Edit', edit_listing_path(@listing) %> |
- <% end %>
-
-<%= link_to 'Back', listings_path %>
+		<%= link_to 'Back', listings_path %>
+	</div>
+</div>
+</div>

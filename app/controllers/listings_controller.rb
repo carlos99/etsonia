@@ -82,6 +82,7 @@ class ListingsController < ApplicationController
       params.require(:listing).permit(:name, :description, :price, :image)
     end
 
+    # Validates that just the owner of the product can edit, update and destroy
     def check_user
       if current_user != @listing.user
         redirect_to root_url, alert: "Sorry, this listing belongs to someone else"
