@@ -1,3 +1,4 @@
+source 'https://code.stripe.com'
 source 'https://rubygems.org'
 
 ruby '2.2.0'
@@ -33,6 +34,7 @@ gem 'paperclip', '~> 4.2.1'
 gem 'aws-sdk', '~> 1.59.1'
 gem 'devise', '~> 3.4.1'
 gem 'angularjs-rails', '~> 1.4.4'
+gem 'stripe', '~> 1.25.0'
 
 
 gem 'rails_12factor', group: :production
