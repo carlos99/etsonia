@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
 
 <h1>Listing Orders</h1>
 
@@ -18,8 +18,8 @@
         <td><%= order.address %></td>
         <td><%= order.city %></td>
         <td><%= order.state %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Show', listing_orders_path %></td>
+        <td><%= link_to 'Edit', edit_listing_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -29,3 +29,4 @@
 <br>
 
 <%= link_to 'New Order', new_order_path %>
+ -->

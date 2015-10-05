@@ -34,6 +34,7 @@ gem 'paperclip', '~> 4.2.1'
 gem 'aws-sdk', '~> 1.59.1'
 gem 'devise', '~> 3.4.1'
 gem 'angularjs-rails', '~> 1.4.4'
+gem 'figaro', '~> 1.1.1'
 gem 'stripe', '~> 1.25.0'
 
 
