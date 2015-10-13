@@ -1,3 +1,45 @@
 .description-item-container{
 	padding-top: 45px;
 }
+
+.main-navbar{
+	background-color: #2a202b;
+	border-color: #2a202b;
+
+	a{
+		color: #fff !important;
+		font-weight: bold;
+	}
+}
+
+.navbar{
+	border-radius: 0;
+}
+
+.carousel-control.left{
+	
+}
+
+.control-mains{
+	background: none !important;
+
+	.control-mains:hover{
+		background-color: none;
+	}
+}
+
+.glyphicon-chevron-right:before{
+	color: #f60;
+}
+
+.glyphicon-chevron-left:before{
+	color: #f60;	
+}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img{
+	margin: auto;
+}
+
+.thumbnail-various{
+	height: 410px;
+}
