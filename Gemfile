@@ -10,6 +10,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 5.0.5'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -36,6 +37,7 @@ gem 'devise', '~> 3.4.1'
 gem 'angularjs-rails', '~> 1.4.4'
 gem 'figaro', '~> 1.1.1'
 gem 'stripe', '~> 1.25.0'
+gem 'simple_form', '~> 3.0.2'
 
 
 gem 'rails_12factor', group: :production

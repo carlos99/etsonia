@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   
+  resources :categories
+
+  resources :comments
+
   devise_for :users
   
   resources :listings do
     resources :orders
+    resources :comments
   end
 
   get 'pages/about'

@@ -7,13 +7,13 @@ class ListingsController < ApplicationController
 
   #The only listings that a user (seller) will see are those that belongs to the current user (owner)
   def seller
-    @listings = Listing.where(user: current_user).order("created_at DESC")
+    @listings = Listing.search(params[:search])
   end
 
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+    @listings = Listing.where(["lower(name) LIKE ?","%#{params[:search]}%"])
   end
 
   # GET /listings/1
@@ -35,6 +35,21 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id #Adding the corresponding User to the Listing
+
+    if current_user.recipient.blank?
+      Stripe.api_key = ENV["stripe_api_key"]
+      token = params[:stripeToken]
+
+      recipient = Stripe::Recipient.create(
+        :name => current_user.name,
+        :type => "individual",
+        :bank_account => token
+        )
+
+      current_user.recipient = recipient.id
+      current_user.save
+    end
+    
 
     respond_to do |format|
       if @listing.save
@@ -79,7 +94,7 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:name, :description, :price, :image)
+      params.require(:listing).permit(:name, :category_id, :description, :price, :image)
     end
 
     # Validates that just the owner of the product can edit, update and destroy
