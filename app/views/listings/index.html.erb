@@ -39,26 +39,22 @@
 </div>
 <!-- Carousel -->
 
-<div class="container">
-  <div class="row">
-    <h2>Recent Products</h2>
-    <% @listings[0..3].each_with_index.each do |listing| %>
-    <div class="col-md-3">
-      <div class="thumbnail">
-      <%= link_to image_tag(listing.image.url), listing %>
-        <div class="caption">
-          <h3><%= listing.name %></h3>
-          <p> <%= number_to_currency(listing.price) %></p>
-          <p><%= listing.description %></p>
-          <p><%= listing.user.name%></p>
-          <% if (user_signed_in?) && (current_user ==listing.user) %>
-          <% end %>
+    <div class="row recent-deals-row">
+      <div class="container">
+        <h2>Recent Products</h2>
+      <% @listings[0..3].each_with_index.each do |listing| %>
+      <div class="col-md-3">
+        <div class="thumbnail">
+        <%= link_to image_tag(listing.image.url), listing %>
+          <div class="caption">
+            <p><%= listing.description %></p>
+            <h3 class="title-recent-deals"> <%= number_to_currency(listing.price) %></h3>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
-</div>
+    <% end %>
+      </div>
+  </div>
 
 <div class="container-fluid">
   <div class="row">
@@ -72,15 +68,13 @@
           <p> <%= number_to_currency(listing.price) %></p>
           <p><%= listing.description %></p>
           <p><%= listing.user.name%></p>
-          <% if (user_signed_in?) && (current_user ==listing.user) %>
+          <% if (user_signed_in?) && (current_user == listing.user) %>
           <% end %>
         </div>
       </div>
     </div>
   <% end %>
 </div>
-
-
 
 <br>
 

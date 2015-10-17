@@ -11,21 +11,23 @@
       <a style="color:#f60;" class="navbar-brand" href="/">Etsonia Store</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><%= link_to 'About', pages_about_path%></li>
-        <li><%= link_to 'Contact Us', pages_contact_path%></li>
-        
-        <%= form_tag listings_path, class: 'navbar-form navbar-left', :method => 'get' do %>
-          <div class="form-group">
-            <%= text_field_tag :search, params[:search], class: 'form-control' %>
-            <%= submit_tag "Search", class: 'btn btn-default' %>
-          </div>
-        <% end %>
-      </ul>
+      <div class="col-md-8">
+        <ul class="nav navbar-nav">
+          <%= form_tag listings_path, class: 'search-container', :method => 'get' do %>
+              <%= text_field_tag :search, params[:search], class: 'search-box', id: 'search-box' %>
+              <%= label_tag 'search-box' do %>
+                <span class="glyphicon glyphicon-search search-icon"></span>
+              <% end %>
+              <%= submit_tag "Search", id: 'search-submit' %>
+          <% end %>
 
-      <ul class="nav navbar-nav navbar-right">
+          
+        </ul>
+      </div>
+
+      <div class="col-md-2">
+        <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in?%>
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%= current_user.name %><span class="caret"></span></a>
@@ -43,6 +45,7 @@
             <li><%= link_to 'Sign In', new_user_session_path%></li>
         <% end %>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+      </div>
+    </div>
+  </div>
 </nav>
