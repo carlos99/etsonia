@@ -40,10 +40,12 @@
 			</div>
 			<%= simple_form_for [@listing, Comment.new]  do |f| %>
 			  <div class="field">
-			    <%= f.text_area :body, class: "form-control" %>
+			    <%= f.text_area :body, class: "form-control input-login" %>
 			  </div>
 			  <br>
-			  <%= f.submit "Add Comment", class: "btn btn-primary" %>
+			  <div class="col-md-2 col-md-offset-4">
+			  	<%= f.submit "Add Comment", class: "btn btn-log" %>
+			  </div>
 			<% end %>
 		</div>
 	</div>

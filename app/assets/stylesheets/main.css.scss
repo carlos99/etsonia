@@ -80,7 +80,7 @@ body{
   width: 135px
 }
 
-.recent-title{
+.recent-title, .title-no-undeline{
   color: #44a586;
   border-bottom: 1px solid #44a586;
   font-family: 'Roboto', sans-serif;
@@ -88,6 +88,11 @@ body{
   font-weight: 400;
   padding-bottom: 15px;
   text-align: center
+}
+
+.title-no-undeline{
+  border: none !important;
+  padding-top: 25px;
 }
 
 .row-recent-products{
@@ -269,18 +274,31 @@ $tl: 0.6s; // transition length
 .content-singin-form{
   background-color: #fff;
   border-radius: 10px;
+  display: block;
   margin: 50px auto;
+  overflow: hidden;
   padding-bottom: 20px;
   padding-left: 25px;
   padding-right: 25px;
   width: 32%;
-  display: block;
 }
+
+.content-singin-form1{
+  background-color: #fff;
+  padding-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px
+}
+
+.frm-new-pr{
+    width: 50%;
+  }
 
 @media (min-width: 600px) and (max-width: 1200px){
   .content-singin-form{
     width: 50%;
   }
+
 }
 
 @media (min-width: 600px) and (max-width: 792px){
@@ -301,6 +319,18 @@ $tl: 0.6s; // transition length
   box-shadow: none !important;
   color: #44a586;
   padding: 20px 15px;
+
+  &:active{
+    box-shadow: none !important;
+  }
+}
+
+.select-purchase{
+  border-radius: 0;
+  border: 1px solid #44a586;
+  box-shadow: none !important;
+  color: #44a586;
+  height: 40px;
 
   &:active{
     box-shadow: none !important;
@@ -379,4 +409,8 @@ input:-webkit-autofill {
   font-size: 16px;
   display: inline-block;
   font-family: 'Roboto', sans-serif;;
+}
+
+.select-category-p{
+  width: 100%;
 }
