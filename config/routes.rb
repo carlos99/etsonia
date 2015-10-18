@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :comments
 
+  resources :searches
+
   devise_for :users
   
   resources :listings do

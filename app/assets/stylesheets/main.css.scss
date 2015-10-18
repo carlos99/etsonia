@@ -1,3 +1,15 @@
+body{
+  background-color: #f2fbf8;
+}
+
+.col-main-nav{
+  margin-top: 5px;
+}
+
+.content-nav{
+  margin-top: 15px;
+}
+
 .description-item-container{
 	padding-top: 45px;
 }
@@ -5,6 +17,7 @@
 .main-navbar{
 	background-color: #2a202b;
 	border-color: #2a202b;
+  height: 80px;
 
 	a{
 		color: #fff !important;
@@ -42,6 +55,15 @@
 
 .thumbnail-various{
 	height: 410px;
+}
+
+.thumbnail{
+  border-radius: 0;
+  padding: 0;
+
+  img{
+    border-bottom: 1px solid #ccc;
+  }
 }
 
 .title-recent-deals{
@@ -104,4 +126,53 @@ $tl: 0.6s; // transition length
   left: -30px;
   color: white;
   cursor: pointer;
+}
+
+
+@media (min-width: 768px){
+
+  .navbar-nav {
+      float: right;
+      margin: 0;
+  }
+}
+
+.search-results-title{
+    color: #f60;
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.slide-it{
+  display: block;
+  height: 400px;
+  width: 100%;
+}
+
+.item-main-slider-1{
+  background: #F2FBF8 url("http://fooyoh.com/files/attach/images/1097/738/458/013/iphone6_concept_hajek_5.jpg") no-repeat;
+  background-size: 80%;
+}
+
+.item-main-slider-2{
+  background: #F2FBF8 url("http://cdn2.alphr.com/sites/alphr/files/styles/16x9_860/public/images/dir_434/it_photo_217369.jpg?itok=daGK5Yaq") no-repeat;
+  background-size: 80%;
+}
+
+.item-main-slider-3{
+  background: #F2FBF8 url("http://www.bargainteers.com/wp-content/uploads/2015/03/Galaxy-S6-Edge.jpg") no-repeat;
+  background-size: 80%;
+}
+
+.item-main-slider-4{
+  background: #F2FBF8 url("http://fooyoh.com/files/attach/images/1097/738/458/013/iphone6_concept_hajek_5.jpg") no-repeat;
+  background-size: 80%;
+}
+
+.item-main-slider-5{
+  background: #F2FBF8 url("http://cdn2.alphr.com/sites/alphr/files/styles/16x9_860/public/images/dir_434/it_photo_217369.jpg?itok=daGK5Yaq") no-repeat; 
+  background-size: 80%; 
 }

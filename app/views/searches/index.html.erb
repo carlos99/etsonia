@@ -1,0 +1,32 @@
+<h2 class="search-results-title">Search Results</h2>
+
+<div class="container-fluid">
+  <div class="row">
+    <% @listings.each do |listing| %>
+    <div class="col-md-3">
+      <div class="thumbnail thumbnail-various">
+      <%= link_to image_tag(listing.image.url), listing %>
+        <div class="caption">
+          <h3><%= listing.name %></h3>
+          <p> <%= number_to_currency(listing.price) %></p>
+          <p><%= listing.description %></p>
+          <p><%= listing.user.name%></p>
+          <% if (user_signed_in?) && (current_user == listing.user) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<% if user_signed_in? %>
+  <%= link_to 'New Listing', new_listing_path, class: 'btn btn-link' %>
+<% end %>
+
+<div class="row">
+    <div class="fb-like" data-href="http://etsonia-store.herokuapp.com/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+  </div>
+
+</div>

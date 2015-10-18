@@ -13,7 +13,7 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.where(["lower(name) LIKE ?","%#{params[:search]}%"])
+    @listings = Listing.all
   end
 
   # GET /listings/1

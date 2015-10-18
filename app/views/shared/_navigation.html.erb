@@ -1,6 +1,5 @@
 <nav class="navbar navbar-default main-navbar">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="container-fluid content-nav">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -10,22 +9,18 @@
       </button>
       <a style="color:#f60;" class="navbar-brand" href="/">Etsonia Store</a>
     </div>
-
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <div class="col-md-8">
+      <div class="col-md-8 col-main-nav">
         <ul class="nav navbar-nav">
-          <%= form_tag listings_path, class: 'search-container', :method => 'get' do %>
+          <%= form_tag searches_path, class: 'search-container', :method => 'get' do %>
               <%= text_field_tag :search, params[:search], class: 'search-box', id: 'search-box' %>
               <%= label_tag 'search-box' do %>
                 <span class="glyphicon glyphicon-search search-icon"></span>
               <% end %>
               <%= submit_tag "Search", id: 'search-submit' %>
           <% end %>
-
-          
         </ul>
       </div>
-
       <div class="col-md-2">
         <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in?%>
